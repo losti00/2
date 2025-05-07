@@ -61,11 +61,19 @@ n_players = st.slider('Anzahl Spieler', 4, 128, 16)
 
 players = []
 for player_id in rankings_df['player_id'].unique()[:n_players]:
-    player_row = players_df[players_df['id'] == player_id].iloc[0]
+    # Überprüfe, ob die player_id in players_df vorhanden ist
+    player_row = players_df[players_df['id'] == player_id]
+    
+    if player_row.empty:
+        continue  # Wenn der Spieler nicht in players_df gefunden wird, überspringen
+    
+    player_row = player_row.iloc[0]
     rank_row = rankings_df[rankings_df['player_id'] == player_id].iloc[0]
+    
     birthdate = player_row['birthdate']
     age = (datetime.now() - datetime.strptime(str(birthdate), '%Y%m%d')).days // 365
     height = random.randint(170, 210)
+    
     players.append({
         'name': f"{player_row['firstname']} {player_row['lastname']}",
         'rank': rank_row['rank'],
