@@ -1,0 +1,51 @@
+requirements.txt
+----------------
+streamlit
+pandas
+numpy
+scikit-learn
+matplotlib
+networkx
+
+streamlit.toml
+----------------
+[server]
+port = 8501
+headless = true
+
+[theme]
+primaryColor = '#1E90FF'
+backgroundColor = '#FFFFFF'
+secondaryBackgroundColor = '#F0F2F6'
+textColor = '#000000'
+
+README.md
+----------------
+# Australian Open Predictor 🎾
+
+Ein Machine Learning Modell zur Vorhersage von Australian Open Match-Ergebnissen basierend auf historischen ATP-Daten.
+
+## Features:
+- **Turnierbaum-Visualisierung**
+- **Einzelmatch-Vorhersagen**
+- **Echte Spielerstatistiken und Altersberechnung**
+
+## Installation:
+1. Klone das Repository:
+```bash
+git clone <REPOSITORY_URL>
+```
+
+2. Installiere die benötigten Abhängigkeiten:
+```bash
+pip install -r requirements.txt
+```
+
+3. Starte die Streamlit-App:
+```bash
+streamlit run app.py
+```
+
+## Nutzung:
+- Wähle die Anzahl der Spieler und starte die Turniersimulation.
+- Nutze die Einzelmatch-Vorhersage für spezifische Spielerpaarungen.
